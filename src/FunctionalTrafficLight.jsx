@@ -5,7 +5,7 @@ const colors = ['green', 'yellow', 'red'];
 export const FunctionalTrafficLight = () => {
   const [colorIndex, setColorIndex] = useState(0);
 
-  const setColor = (index) =>
+  const getColorForIndex = (index) =>
     index === colorIndex ? colors[colorIndex] : "black";
 
   const incrementIndex = () => {
@@ -22,9 +22,9 @@ export const FunctionalTrafficLight = () => {
       <h2>Functional Traffic Light</h2>
       <div className="traffic-light">
         {/* Background color can be black | yellow | red | green */}
-        <div className={`circle ${setColor(2)}`}></div>
-        <div className={`circle ${setColor(1)}`}></div>
-        <div className={`circle ${setColor(0)}`}></div>
+        <div className={`circle ${getColorForIndex(2)}`}></div>
+        <div className={`circle ${getColorForIndex(1)}`}></div>
+        <div className={`circle ${getColorForIndex(0)}`}></div>
       </div>
       <button className="next-state-button" onClick={incrementIndex}>
         Next State
